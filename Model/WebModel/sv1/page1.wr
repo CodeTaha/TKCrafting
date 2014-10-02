@@ -5,32 +5,11 @@
         <KeyCondition id="sv1#page1#dau1#su1#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
       </Selector>
     </DataUnit>
-    <DataUnit gr:x="125" gr:y="20" id="sv1#page1#dau2" name="Changed her number">
-      <Selector id="sv1#page1#dau2#su2" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="sv1#page1#dau2#su2#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
-      </Selector>
-    </DataUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv1#page1#dau1"/>
-      </layout:Cell>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-    </layout:Row>
-    <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv1#page1#dau2"/>
       </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
