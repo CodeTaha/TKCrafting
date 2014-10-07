@@ -1,0 +1,124 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="165" gr:y="95" id="sv1#page1" name="Home">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#page1#enu1" name="Login" fieldOrder="sv1#page1#enu1#fld10 sv1#page1#enu1#fld11" entity="ent2" linkOrder="sv1#page1#enu1#ln8">
+      <Field id="sv1#page1#enu1#fld11" name="Password" type="password" modifiable="true" attribute="password"/>
+      <Field id="sv1#page1#enu1#fld10" name="Username" type="string" modifiable="true" attribute="userName"/>
+      <Link id="sv1#page1#enu1#ln8" name="Login" to="sv1#miu1" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#enu1#ln8#par24" name="Password_Password" source="sv1#page1#enu1#fld11" target="sv1#miu1.mov1#opm1#icu3#icp2"/>
+        <LinkParameter id="sv1#page1#enu1#ln8#par25" name="Username_Username" source="sv1#page1#enu1#fld10" target="sv1#miu1.mov1#opm1#icu3#icp3"/>
+      </Link>
+    </EntryUnit>
+    <EntryUnit gr:x="140" gr:y="0" id="sv1#page1#enu2" name="Create Worker" fieldOrder="sv1#page1#enu2#fld7 sv1#page1#enu2#fld8 sv1#page1#enu2#fld9 sv1#page1#enu2#fld2 sv1#page1#enu2#fld3 sv1#page1#enu2#msfld1" entity="ent2" linkOrder="sv1#page1#enu2#ln4">
+      <MultiSelectionField id="sv1#page1#enu2#msfld1" name="Skills" type="string" modifiable="true" role="rel4#role7"/>
+      <Field id="sv1#page1#enu2#fld3" name="Birth Date" type="date" modifiable="true" attribute="ent2#att13"/>
+      <Field id="sv1#page1#enu2#fld2" name="Name" type="string" modifiable="true" attribute="ent2#att12"/>
+      <Field id="sv1#page1#enu2#fld9" name="Email" type="string" modifiable="true" attribute="email"/>
+      <Field id="sv1#page1#enu2#fld8" name="Password" type="password" modifiable="true" attribute="password"/>
+      <Field id="sv1#page1#enu2#fld7" name="Username" type="string" modifiable="true" attribute="userName"/>
+      <Link id="sv1#page1#enu2#ln3" name="Register" to="sv1#cru1" type="transport" validate="true" newWindow="false">
+        <LinkParameter id="sv1#page1#enu2#ln3#par9" name="0_Accuracy" sourceValue="0" target="sv1#cru1.ent2#att15"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par10" name="0_AssessedTasks" sourceValue="0" target="sv1#cru1.ent2#att16"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par11" name="0_Bank" sourceValue="0" target="sv1#cru1.ent2#att14"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par12" name="Birth Date_BirthDate" source="sv1#page1#enu2#fld3" target="sv1#cru1.ent2#att13"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par13" name="Email_email" source="sv1#page1#enu2#fld9" target="sv1#cru1.email"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par14" name="Name_Name" source="sv1#page1#enu2#fld2" target="sv1#cru1.ent2#att12"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par15" name="Key [oid]_oid" source="key.userOID" target="sv1#cru1.userOID"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par16" name="Password_password" source="sv1#page1#enu2#fld8" target="sv1#cru1.password"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par17" name="Username_userName" source="sv1#page1#enu2#fld7" target="sv1#cru1.userName"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par18" name="Worker Object_Worker Object" source="entityBean" target="sv1#cru1.entityBeans"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par30" name="1_Group.oid(defaultGroup)" sourceValue="1" target="sv1#cru1.User2DefaultGroup.groupOID"/>
+      </Link>
+      <VRules>
+        <FormNotEmptyValidationRule id="sv1#page1#enu2#fnevr1" name="Form Not Empty"/>
+      </VRules>
+      <Link id="sv1#page1#enu2#ln4" to="sv1#seu5" type="normal" validate="true" name="Register">
+        <LinkParameter id="sv1#page1#enu2#ln4#par27" name="Username_SameUsername" source="sv1#page1#enu2#fld7" target="sv1#seu5#su2#acond1"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="155" gr:y="120" id="sv1#page1#seu1" name="Skills" entity="ent6" distinctAttributes="ent6#att17">
+      <Link id="sv1#page1#seu1#ln2" name="Show Skills List" to="sv1#page1#enu2" type="transport" validate="true">
+        <LinkParameter id="sv1#page1#seu1#ln2#par5" name="skill_id_Key Condition [oid]" source="ent6#att11Array" target="sv1#page1#enu2.userOID"/>
+        <LinkParameter id="sv1#page1#seu1#ln2#par6" name="Name_Skills - Preselection" source="ent6#att17Array" target="sv1#page1#enu2#msfld1_presel"/>
+        <LinkParameter id="sv1#page1#seu1#ln2#par7" name="Name_Skills [label]" source="ent6#att17Array" target="sv1#page1#enu2#msfld1_label"/>
+        <LinkParameter id="sv1#page1#seu1#ln2#par8" name="skill_id_Skills [output]" source="ent6#att11Array" target="sv1#page1#enu2#msfld1_output"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit gr:x="5" gr:y="135" id="sv1#page1#mssu1" name="LoginError"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#enu1">
+          <layout:Field field="sv1#page1#enu1#fld10"/>
+          <layout:Field field="sv1#page1#enu1#fld11"/>
+          <layout:Link link="sv1#page1#enu1#ln8"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#enu2">
+          <layout:Field field="sv1#page1#enu2#fld7"/>
+          <layout:Field field="sv1#page1#enu2#fld8"/>
+          <layout:Field field="sv1#page1#enu2#fld9"/>
+          <layout:Field field="sv1#page1#enu2#fld2"/>
+          <layout:Field field="sv1#page1#enu2#fld3"/>
+          <layout:Field field="sv1#page1#enu2#msfld1"/>
+          <layout:Link link="sv1#page1#enu2#ln4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#mssu1"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

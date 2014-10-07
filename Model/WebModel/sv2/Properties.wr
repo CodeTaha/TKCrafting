@@ -1,0 +1,14 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2" name="Dashboard" protected="true" homePage="sv2#page2" landmarks="sv2#miu4" layout:style="Multiflex">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="25" gr:y="325" id="sv2#miu4" action="true" moduleId="mov1#opm2" landmark="true"/>
+    <CreateUnit gr:x="-20" gr:y="660" id="sv2#cru7" name="Make Annotation Campaign" entity="ent5"/>
+    <CreateUnit gr:x="660" gr:y="375" id="sv2#cru9" name="Upload Item" entity="ent3"/>
+    <CreateUnit gr:x="830" gr:y="410" id="sv2#cru10" name="Make Task" entity="ent1"/>
+    <ParameterCollectorUnit gr:x="-25" gr:y="440" id="sv2#pcu2" name="Parameter Collector2">
+      <CollectorParameter id="sv2#pcu2#pcp4" name="CurrentWorker" value="5"/>
+      <CollectorParameter id="sv2#pcu2#pcp3" name="Status"/>
+      <CollectorParameter id="sv2#pcu2#pcp2" name="Budget"/>
+      <CollectorParameter id="sv2#pcu2#pcp1" name="Name"/>
+    </ParameterCollectorUnit>
+  </OperationUnits>
+</SiteView>

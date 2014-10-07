@@ -1,0 +1,62 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page8" name="Select workers" gr:x="955" gr:y="370">
+  <ContentUnits>
+    <SelectorUnit id="sv2#page8#seu11" name="Get Skills from Task" gr:x="0" gr:y="0" entity="ent6" distinctAttributes="ent6#att11" distinct="true">
+      <Selector id="sv2#page8#seu11#su7" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page8#seu11#su7#rcond5" name="GetSkillIdsFromTask" role="rel2#role4" predicate="in" implied="false"/>
+        <AttributesCondition id="sv2#page8#seu11#su7#acond4" name="GetSkillFromTask" predicate="eq" booleanOperator="or" implied="false"/>
+      </Selector>
+      <Link id="sv2#page8#seu11#ln21" name="GetWorkersFromSkillId" to="sv2#page8#seu13" type="transport" validate="true">
+        <LinkParameter id="sv2#page8#seu11#ln21#par42" name="skill_id_GetWorkerFromSkill" source="ent6#att11Array" target="sv2#page8#seu13#su10#acond5"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="sv2#page8#seu13" name="Get Workers from Skills" gr:x="180" gr:y="5" entity="ent2" distinctAttributes="userName ent2#att12">
+      <Selector id="sv2#page8#seu13#su10" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page8#seu13#su10#rcond9" name="GetWorkersBySkill" predicate="in" implied="false" role="rel4#role8"/>
+        <AttributesCondition id="sv2#page8#seu13#su10#acond5" name="GetWorkerFromSkill" predicate="eq" booleanOperator="or" implied="false"/>
+      </Selector>
+      <Link id="sv2#page8#seu13#ln5" name="Flow5" to="sv2#page8#pwu2" type="transport" validate="true">
+        <LinkParameter id="sv2#page8#seu13#ln5#par43" name="oid_current oid" source="userOIDArray" target="sv2#page8#pwu2.current.userOID"/>
+      </Link>
+    </SelectorUnit>
+    <PowerIndexUnit gr:x="140" gr:y="155" id="sv2#page8#pwu2" name="Workers List" sortable="true" checkable="false" useCountQuery="false" entity="ent2" displayAttributes="email ent2#att12">
+      <Selector id="sv2#page8#pwu2#su3" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page8#pwu2#su3#rcond1" name="GetWorkersBySkill" predicate="in" implied="false"/>
+      </Selector>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page8#pwu2">
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="ent2#att12"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,16 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="155" gr:y="125" id="mov1#opm1" name="Login">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="150" gr:y="100" id="mov1#opm1#icu3">
+      <OKLink id="mov1#opm1#icu3#oln2" name="OKFlow2" to="mov1#opm1#lgu3" automaticCoupling="false">
+        <LinkParameter id="mov1#opm1#icu3#oln2#par22" name="Password" source="mov1#opm1#icu3#icp2" target="mov1#opm1#lgu3.password"/>
+        <LinkParameter id="mov1#opm1#icu3#oln2#par23" name="Username" source="mov1#opm1#icu3#icp3" target="mov1#opm1#lgu3.username"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#opm1#icu3#icp2" name="Password"/>
+      <InputCollectorParameter id="mov1#opm1#icu3#icp3" name="Username"/>
+    </InputCollectorUnit>
+    <LoginUnit gr:x="475" gr:y="110" id="mov1#opm1#lgu3" name="Login">
+      <KOLink id="mov1#opm1#lgu3#kln1" name="KOFlow1" to="mov1#opm1#kocu1" automaticCoupling="true"/>
+    </LoginUnit>
+    <KOCollectorUnit gr:x="640" gr:y="160" id="mov1#opm1#kocu1" name="KO Port"/>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,5 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="440" gr:y="290" id="mov1#opm5" name="Create Annotation Campaign">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm5#icu8" name="Input Collector" gr:x="30" gr:y="60"/>
+  </OperationUnits>
+</OperationModule>

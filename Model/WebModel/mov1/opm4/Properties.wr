@@ -1,0 +1,13 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="445" gr:y="150" id="mov1#opm4" name="Create Task">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm4#icu7" gr:x="20" gr:y="135"/>
+    <SelectorUnit gr:x="320" gr:y="225" id="mov1#opm4#seu3" name="Select Skills" entity="ent6"/>
+    <SelectorUnit gr:x="315" gr:y="95" id="mov1#opm4#seu4" name="Select Items" entity="ent3" distinctAttributes="ent3#att23 ent3#att24"/>
+    <CreateUnit gr:x="545" gr:y="130" id="mov1#opm4#cru4" name="Create Task">
+      <OKLink id="mov1#opm4#cru4#oln13" name="OKFlow13" to="mov1#opm4#okcu2" automaticCoupling="true"/>
+      <KOLink id="mov1#opm4#cru4#kln6" name="KOFlow6" to="mov1#opm4#kocu4" automaticCoupling="true"/>
+    </CreateUnit>
+    <KOCollectorUnit gr:x="680" gr:y="85" id="mov1#opm4#kocu4" name="KO Port4"/>
+    <OKCollectorUnit gr:x="680" gr:y="225" id="mov1#opm4#okcu2" name="OK Port2"/>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,11 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="440" gr:y="65" id="mov1#opm3" name="Create Item">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm3#icu6" gr:x="25" gr:y="115">
+      <InputCollectorParameter id="mov1#opm3#icu6#icp6" name="Caption"/>
+      <InputCollectorParameter id="mov1#opm3#icu6#icp7" name="Title"/>
+      <InputCollectorParameter id="mov1#opm3#icu6#icp8" name="Url"/>
+    </InputCollectorUnit>
+    <KOCollectorUnit gr:x="450" gr:y="60" id="mov1#opm3#kocu3" name="KO Port3"/>
+    <OKCollectorUnit gr:x="450" gr:y="185" id="mov1#opm3#okcu1" name="OK Port1"/>
+  </OperationUnits>
+</OperationModule>

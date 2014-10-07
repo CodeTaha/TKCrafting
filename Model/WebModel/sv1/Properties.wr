@@ -1,0 +1,24 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Home" homePage="sv1#page1">
+  <OperationUnits>
+    <CreateUnit gr:x="775" gr:y="145" id="sv1#cru1" name="Register Worker" entity="ent2"/>
+    <ModuleInstanceUnit gr:x="-10" gr:y="165" id="sv1#miu1" action="true" moduleId="mov1#opm1">
+      <KOLink id="sv1#miu1#kln2" name="Login Failed" to="sv1#page1#mssu1">
+        <LinkParameter id="sv1#miu1#kln2#par26" name="Login failed_Shown Messages" sourceValue="Login failed" target="sv1#page1#mssu1.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <SelectorUnit gr:x="490" gr:y="240" id="sv1#seu5" name="IsUsernameTaken" entity="User">
+      <Selector id="sv1#seu5#su2" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#seu5#su2#acond1" name="SameUsername" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <OKLink id="sv1#seu5#oln1" name="OKFlow1" to="sv1#switch1">
+        <LinkParameter id="sv1#seu5#oln1#par29" name="Data Size_Switch" source="dataSize" target="sv1#switch1.switch"/>
+      </OKLink>
+    </SelectorUnit>
+    <SwitchUnit gr:x="500" gr:y="400" id="sv1#switch1" name="IsDuplicate">
+      <OKLink id="sv1#switch1#oln3" name="Username valid" to="sv1#cru1" code="0"/>
+      <OKLink id="sv1#switch1#oln7" name="OKFlow7" to="sv1#page3#mssu2" automaticCoupling="true" code="1"/>
+      <Case value="0"/>
+      <Case value="1"/>
+    </SwitchUnit>
+  </OperationUnits>
+</SiteView>
