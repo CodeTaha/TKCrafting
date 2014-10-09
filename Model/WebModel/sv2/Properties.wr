@@ -1,14 +1,20 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2" name="Dashboard" protected="true" homePage="sv2#page2" landmarks="sv2#miu4" layout:style="Multiflex">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2" name="Dashboard" protected="true" landmarks="sv2#miu4 sv2#area1 sv2#area2 sv2#area3" layout:style="Multiflex" homePage="sv2#area1#page4">
   <OperationUnits>
-    <ModuleInstanceUnit gr:x="25" gr:y="325" id="sv2#miu4" action="true" moduleId="mov1#opm2" landmark="true"/>
-    <CreateUnit gr:x="-20" gr:y="660" id="sv2#cru7" name="Make Annotation Campaign" entity="ent5"/>
-    <CreateUnit gr:x="660" gr:y="375" id="sv2#cru9" name="Upload Item" entity="ent3"/>
-    <CreateUnit gr:x="830" gr:y="410" id="sv2#cru10" name="Make Task" entity="ent1"/>
-    <ParameterCollectorUnit gr:x="-25" gr:y="440" id="sv2#pcu2" name="Parameter Collector2">
-      <CollectorParameter id="sv2#pcu2#pcp4" name="CurrentWorker" value="5"/>
-      <CollectorParameter id="sv2#pcu2#pcp3" name="Status"/>
-      <CollectorParameter id="sv2#pcu2#pcp2" name="Budget"/>
-      <CollectorParameter id="sv2#pcu2#pcp1" name="Name"/>
-    </ParameterCollectorUnit>
+    <ModuleInstanceUnit gr:x="-45" gr:y="270" id="sv2#miu4" action="true" moduleId="mov1#opm2" landmark="true"/>
+    <CreateUnit gr:x="285" gr:y="360" id="sv2#cru7" name="Make Annotation Campaign" entity="ent5"/>
+    <CreateUnit gr:x="1210" gr:y="380" id="sv2#cru9" name="Upload Item" entity="ent3">
+      <OKLink id="sv2#cru9#oln10" name="OKFlow5" to="sv2#area2#page5" automaticCoupling="true" customDescriptor="false"/>
+    </CreateUnit>
+    <CreateUnit gr:x="1190" gr:y="230" id="sv2#cru10" name="Make Task" entity="ent1">
+      <OKLink id="sv2#cru10#oln8" name="Redirect to worker assignment" to="sv2#page26#seu42">
+        <LinkParameter id="sv2#cru10#oln8#par418" name="task_id_TaskToSKills [task_id]" source="ent1#att1Array" target="sv2#page26#seu42#su15#rcond8.ent1#att1"/>
+        <LinkParameter id="sv2#cru10#oln8#par419" name="task_id_PASSING" source="ent1#att1Array" passing="true"/>
+      </OKLink>
+    </CreateUnit>
+    <ModifyUnit gr:x="1495" gr:y="600" id="sv2#mfu1" name="Map Task and Workers" entity="ent1">
+      <Selector id="sv2#mfu1#su21" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mfu1#su21#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
   </OperationUnits>
 </SiteView>

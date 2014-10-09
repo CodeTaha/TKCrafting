@@ -1,0 +1,28 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area3#page17" name="Create Task" landmark="true" ajaxEnabled="false" gr:x="0" gr:y="0">
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <ContentUnits>
+    <EntryUnit id="sv2#area3#page17#enu32" name="Assign Workers to Task" linkOrder="sv2#area3#page17#enu32#ln72" ajaxTooltipEnabled="false" ajaxTooltipElement="row" ajaxEnableExpandedLinks="false" gr:x="0" gr:y="0" fieldOrder="sv2#area3#page17#enu32#sfld12" entity="ent1">
+      <SelectionField id="sv2#area3#page17#enu32#sfld12" name="Select Task" type="string"/>
+      <Link id="sv2#area3#page17#enu32#ln72" name="Flow10" to="sv2#page8#seu11" type="normal" validate="true">
+        <LinkParameter id="sv2#area3#page17#enu32#ln72#par252" name="Select Task_PASSING" source="sv2#area3#page17#enu32#sfld12" passing="true"/>
+        <LinkParameter id="sv2#area3#page17#enu32#ln72#par253" name="Select Task_GetSkillFromTask" source="sv2#area3#page17#enu32#sfld12" target="sv2#page8#seu11#su7#acond4"/>
+      </Link>
+      <Field id="sv2#area3#page17#enu32#fld99" name="Requester" type="integer" modifiable="true" hidden="true"/>
+    </EntryUnit>
+  </ContentUnits>
+</Page>

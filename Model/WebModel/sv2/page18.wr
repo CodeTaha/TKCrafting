@@ -1,0 +1,81 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1195" gr:y="-40" id="sv2#page18" name="Create Task">
+  <ContentUnits>
+    <EntryUnit gr:x="95" gr:y="110" id="sv2#page18#enu36" name="Create Task" fieldOrder="sv2#page18#enu36#fld109 sv2#page18#enu36#fld110 sv2#page18#enu36#fld111 sv2#page18#enu36#fld112 sv2#page18#enu36#fld113 sv2#page18#enu36#msfld22 sv2#page18#enu36#msfld23" entity="ent1" linkOrder="sv2#page18#enu36#ln82">
+      <Field id="sv2#page18#enu36#fld110" name="Description" type="string" modifiable="true"/>
+      <Field id="sv2#page18#enu36#fld109" name="Title" type="string" modifiable="true"/>
+      <MultiSelectionField id="sv2#page18#enu36#msfld23" name="Select Skills" type="string" modifiable="true"/>
+      <MultiSelectionField id="sv2#page18#enu36#msfld22" name="Select Items" type="string" modifiable="true"/>
+      <Field id="sv2#page18#enu36#fld115" name="Annotation Campaign" type="integer" preloaded="true" hidden="true"/>
+      <Field id="sv2#page18#enu36#fld113" name="ExpirationTimestamp" type="timestamp" modifiable="true"/>
+      <Field id="sv2#page18#enu36#fld112" name="MaxExecTime" type="date" modifiable="true"/>
+      <Field id="sv2#page18#enu36#fld111" name="Money" type="integer" modifiable="true"/>
+      <Link id="sv2#page18#enu36#ln82" name="Create new Task" to="sv2#cru10" type="normal" validate="true">
+        <LinkParameter id="sv2#page18#enu36#ln82#par277" name="Description_Description" source="sv2#page18#enu36#fld110" target="sv2#cru10.ent1#att7"/>
+        <LinkParameter id="sv2#page18#enu36#ln82#par278" name="ExpirationTimestamp_ExpirationTime" source="sv2#page18#enu36#fld113" target="sv2#cru10.ent1#att10"/>
+        <LinkParameter id="sv2#page18#enu36#ln82#par279" name="MaxExecTime_MaxExecTime" source="sv2#page18#enu36#fld112" target="sv2#cru10.ent1#att9"/>
+        <LinkParameter id="sv2#page18#enu36#ln82#par280" name="Money_MonetaryReward" source="sv2#page18#enu36#fld111" target="sv2#cru10.ent1#att8"/>
+        <LinkParameter id="sv2#page18#enu36#ln82#par281" name="Task Object_Task Object" source="entityBean" target="sv2#cru10.entityBeans"/>
+        <LinkParameter id="sv2#page18#enu36#ln82#par282" name="Title_Title" source="sv2#page18#enu36#fld109" target="sv2#cru10.ent1#att6"/>
+        <LinkParameter id="sv2#page18#enu36#ln82#par283" name="Key [task_id]_task_id" source="key.ent1#att1" target="sv2#cru10.ent1#att1"/>
+        <LinkParameter id="sv2#page18#enu36#ln82#par285" name="AnnotationCampaign_AnnotationCampaign.ac_id(TaskToAnnotationCampaign)" source="sv2#page18#enu36#fld115" target="sv2#cru10.rel5#role10.ent5#att5"/>
+        <LinkParameter id="sv2#page18#enu36#ln82#par393" name="Select Skills_Skills.skill_id(TaskToSkills)" source="sv2#page18#enu36#msfld23" target="sv2#cru10.rel2#role4.ent6#att11"/>
+        <LinkParameter id="sv2#page18#enu36#ln82#par394" name="Select Items_Item.item_id(TaskToItem)" source="sv2#page18#enu36#msfld22" target="sv2#cru10.rel3#role5.ent3#att3"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit id="sv2#page18#seu34" name="Select Item" gr:x="10" gr:y="0" entity="ent3" distinctAttributes="ent3#att23 ent3#att24 ent3#att25">
+      <Link id="sv2#page18#seu34#ln85" name="Select Items for Task" to="sv2#page18#enu36" type="transport" validate="true">
+        <LinkParameter id="sv2#page18#seu34#ln85#par299" name="Title_Select Items - Preselection" source="ent3#att23Array" target="sv2#page18#enu36#msfld22_presel"/>
+        <LinkParameter id="sv2#page18#seu34#ln85#par300" name="Title_Select Items [label]" source="ent3#att23Array" target="sv2#page18#enu36#msfld22_label"/>
+        <LinkParameter id="sv2#page18#seu34#ln85#par301" name="item_id_Select Items [output]" source="ent3#att3Array" target="sv2#page18#enu36#msfld22_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="sv2#page18#seu35" name="Select Skills" gr:x="150" gr:y="5" entity="ent6" distinctAttributes="ent6#att17 ent6#att11">
+      <Link id="sv2#page18#seu35#ln86" name="Define required Skills for Task" to="sv2#page18#enu36" type="transport" validate="true">
+        <LinkParameter id="sv2#page18#seu35#ln86#par302" name="Name_Select Skills - Preselection" source="ent6#att17Array" target="sv2#page18#enu36#msfld23_presel"/>
+        <LinkParameter id="sv2#page18#seu35#ln86#par303" name="Name_Select Skills [label]" source="ent6#att17Array" target="sv2#page18#enu36#msfld23_label"/>
+        <LinkParameter id="sv2#page18#seu35#ln86#par304" name="skill_id_Select Skills [output]" source="ent6#att11Array" target="sv2#page18#enu36#msfld23_output"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page18#enu36">
+          <layout:Field field="sv2#page18#enu36#fld109"/>
+          <layout:Field field="sv2#page18#enu36#fld110"/>
+          <layout:Field field="sv2#page18#enu36#fld111"/>
+          <layout:Field field="sv2#page18#enu36#fld112"/>
+          <layout:Field field="sv2#page18#enu36#fld113"/>
+          <layout:Field field="sv2#page18#enu36#msfld22"/>
+          <layout:Field field="sv2#page18#enu36#msfld23"/>
+          <layout:Link link="sv2#page18#enu36#ln82"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

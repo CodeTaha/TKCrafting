@@ -1,0 +1,85 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1320" gr:y="285" id="sv2#page26" name="Edit Task">
+  <ContentUnits>
+    <SelectorUnit id="sv2#page26#seu42" name="Get Skills from Task" gr:x="10" gr:y="0" entity="ent6" distinctAttributes="ent6#att11" distinct="false">
+      <Link id="sv2#page26#seu42#ln122" name="Get workers based on skill" to="sv2#page26#mciu1" type="transport" validate="true">
+        <LinkParameter id="sv2#page26#seu42#ln122#par399" name="skill_id_PASSING" source="ent6#att11Array" passing="true"/>
+        <LinkParameter id="sv2#page26#seu42#ln122#par404" name="skill_id_RoleCondition13 [skill_id]" source="ent6#att11Array" target="sv2#page26#mciu1#su19#rcond13.ent6#att11"/>
+        <LinkParameter id="sv2#page26#seu42#ln122#par420" name="task_id_PASSING" sourceLinkParameter="sv2#cru10#oln8#par419" passing="true"/>
+      </Link>
+      <Link id="sv2#page26#seu42#ln125" name="Get skills from Task" to="sv2#page26#inu1" type="transport" validate="true">
+        <LinkParameter id="sv2#page26#seu42#ln125#par395" name="skill_id_AttCondition12" source="ent6#att11Array" target="sv2#page26#inu1#su14#acond12"/>
+        <LinkParameter id="sv2#page26#seu42#ln125#par396" name="skill_id_PASSING" source="ent6#att11Array" passing="true"/>
+      </Link>
+      <Selector id="sv2#page26#seu42#su15" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page26#seu42#su15#rcond8" name="TaskToSKills" predicate="in" implied="false" role="rel2#role4"/>
+      </Selector>
+    </SelectorUnit>
+    <MultiChoiceIndexUnit gr:x="200" gr:y="10" id="sv2#page26#mciu1" name="Worker List" entity="ent2" displayAttributes="userName" linkOrder="sv2#page26#mciu1#ln136">
+      <Selector id="sv2#page26#mciu1#su19" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page26#mciu1#su19#rcond13" name="RoleCondition13" predicate="in" implied="false" role="rel4#role8"/>
+      </Selector>
+      <Link id="sv2#page26#mciu1#ln136" name="Assign Workers" to="sv2#mfu1" type="normal" validate="true">
+        <LinkParameter id="sv2#page26#mciu1#ln136#par423" name="task_id_PASSING_KeyCondition5 [task_id]" sourceLinkParameter="sv2#page26#seu42#ln122#par420" target="sv2#mfu1#su21#kcond5.ent1#att1"/>
+        <LinkParameter id="sv2#page26#mciu1#ln136#par424" name="Checked oid_Worker.oid(TaskToWorker)" source="userOIDChecked" target="sv2#mfu1.rel1#role1.userOID"/>
+      </Link>
+    </MultiChoiceIndexUnit>
+    <IndexUnit gr:x="0" gr:y="160" id="sv2#page26#inu1" name="Skills needed for this task" entity="ent6" displayAttributes="ent6#att17">
+      <Selector id="sv2#page26#inu1#su14" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#page26#inu1#su14#acond12" name="SkillsFromTask" predicate="eq" booleanOperator="or" implied="false" attributes="ent6#att11" ignoreCase="true"/>
+      </Selector>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page26#mciu1">
+          <layout:Attribute attribute="userName"/>
+          <layout:Link link="sv2#page26#mciu1#ln136"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page26#inu1">
+          <layout:Attribute attribute="ent6#att17"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

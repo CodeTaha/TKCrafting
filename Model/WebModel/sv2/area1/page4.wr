@@ -1,25 +1,25 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="35" gr:y="100" id="sv2#page2" name="Dashboard" customURLName="Home.do">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area1#page4" name="Dashboard" customURLName="Home.do" gr:x="0" gr:y="0">
   <ContentUnits>
-    <DataUnit gr:x="170" gr:y="0" id="sv2#page2#dau1" name="Current Worker" entity="ent2" displayAll="true">
-      <Selector id="sv2#page2#dau1#su1" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="sv2#page2#dau1#su1#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+    <DataUnit id="sv2#area1#page4#dau2" name="Current Worker" gr:x="170" gr:y="0" entity="ent2" displayAttributes="userOID userName email ent2#att12 ent2#att13 ent2#att14 ent2#att15 ent2#att16">
+      <Selector id="sv2#area1#page4#dau2#su5" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area1#page4#dau2#su5#kcond2" name="KeyCondition1" predicate="in" implied="false"/>
       </Selector>
     </DataUnit>
-    <EntryUnit gr:x="0" gr:y="110" id="sv2#page2#enu12" name="Create Annotation Campaign" linkOrder="sv2#page2#enu12#ln31">
-      <Link id="sv2#page2#enu12#ln31" name="Create Annotation Campaign" to="sv2#page5" automaticCoupling="true" type="normal" validate="true"/>
+    <EntryUnit id="sv2#area1#page4#enu4" name="Create Annotation Campaign" gr:x="0" gr:y="110" linkOrder="sv2#area1#page4#enu4#ln14">
+      <Link id="sv2#area1#page4#enu4#ln14" name="Create Annotation Campaign" to="sv2#area2#page5" type="normal" automaticCoupling="true" validate="true"/>
     </EntryUnit>
-    <GetUnit gr:x="0" gr:y="10" id="sv2#page2#gtu4" name="GetCurrentUser" contextParameters="UserCtxParam">
-      <Link id="sv2#page2#gtu4#ln16" name="Flow16" to="sv2#page2#dau1" type="transport" validate="true">
-        <LinkParameter id="sv2#page2#gtu4#ln16#par45" name="UserCtxParam.oid_KeyCondition1 [oid]" source="sv2#page2#gtu4.UserCtxParam" target="sv2#page2#dau1#su1#kcond1.userOID"/>
+    <GetUnit id="sv2#area1#page4#gtu1" name="GetCurrentUser" gr:x="0" gr:y="10" contextParameters="UserCtxParam">
+      <Link id="sv2#area1#page4#gtu1#ln9" name="Flow16" to="sv2#area1#page4#dau2" type="transport" validate="true">
+        <LinkParameter id="sv2#area1#page4#gtu1#ln9#par28" name="UserCtxParam.oid_KeyCondition1 [oid]" source="sv2#area1#page4#gtu1.UserCtxParam" target="sv2#area1#page4#dau2#su5#kcond2.userOID"/>
       </Link>
     </GetUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
       <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#page2#dau1">
+        <layout:Unit unitId="sv2#area1#page4#dau2">
+          <layout:Attribute attribute="userOID"/>
           <layout:Attribute attribute="userName"/>
-          <layout:Attribute attribute="password"/>
           <layout:Attribute attribute="email"/>
           <layout:Attribute attribute="ent2#att12"/>
           <layout:Attribute attribute="ent2#att13"/>
@@ -42,8 +42,8 @@
     </layout:Row>
     <layout:Row>
       <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#page2#enu12">
-          <layout:Link link="sv2#page2#enu12#ln31"/>
+        <layout:Unit unitId="sv2#area1#page4#enu4">
+          <layout:Link link="sv2#area1#page4#enu4#ln14"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

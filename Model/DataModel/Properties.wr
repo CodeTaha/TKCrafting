@@ -46,14 +46,16 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="ktCrafting_db" type="MySQL" url="jdbc:mysql:///ktcrafting" username="root" connectionCount="5" password="root123"/>
-  <Entity gr:x="145" gr:y="315" id="ent1" name="Task" duration="persistent" attributeOrder="ent1#att1 ent1#att6 ent1#att7 ent1#att8 ent1#att9 ent1#att10" db:database="db1" db:table="task">
+  <db:Database id="db1" name="ktCrafting_db" type="MySQL" url="jdbc:mysql:///ktcrafting" username="root" connectionCount="5" password="root123">
+  </db:Database>
+  <Entity gr:x="145" gr:y="315" id="ent1" name="Task" duration="persistent" attributeOrder="ent1#att1 ent1#att6 ent1#att7 ent1#att8 ent1#att9 ent1#att10 ent1#att2" db:database="db1" db:table="task">
     <Attribute id="ent1#att1" key="true" name="task_id" type="integer" db:column="task_id"/>
     <Attribute id="ent1#att6" name="Title" type="string" db:column="title"/>
     <Attribute id="ent1#att7" name="Description" type="string" db:column="description"/>
     <Attribute id="ent1#att8" name="MonetaryReward" type="integer" db:column="monetaryreward"/>
     <Attribute id="ent1#att9" name="MaxExecTime" type="date" db:column="maxexectime"/>
     <Attribute id="ent1#att10" name="ExpirationTime" type="timestamp" db:column="expirationtime"/>
+    <Attribute id="ent1#att2" name="Annotation Campaign" type="integer" derivationQuery="simpleImported::Self.rel5#role10.rel9#role18.userOID"/>
   </Entity>
   <Entity gr:x="145" gr:y="140" id="ent2" name="Worker" duration="persistent" attributeOrder="ent2#att12 ent2#att13 ent2#att14 ent2#att15 ent2#att16" db:database="db1" db:table="worker">
     <Attribute id="ent2#att12" name="Name" type="string" db:column="name"/>
